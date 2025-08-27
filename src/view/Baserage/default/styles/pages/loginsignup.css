@@ -1,0 +1,216 @@
+:root{
+    --logo-size: 80px;
+}
+
+
+/* Layout styles */
+    .content-login-signup-forms {
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Tow Sides <Tag> */
+        .form-aside {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        .other-aside-form {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+    
+    /* Image Side - Img <Tag> */
+        .img-other-aside-form {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 0;
+        }
+        .img-other-aside-form > img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+
+    /* Texts on image */
+        .texts-other-aside-form {
+            height: max-content;
+            width: 100%;
+            padding-left: 30px;
+            padding-bottom: 40px;
+            padding-right: 30px;
+            position: absolute;
+            z-index: 1;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+        }
+
+        .text-other-aside-form {
+            height: max-content;
+            width: 90%;
+        }
+        .text-other-aside-form > p {
+            font-size: 19px;
+            line-height: 25px;
+            color: #ffffff;
+        }
+
+        .infos-img-other-aside-form {
+            height: max-content;
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            row-gap: 8px;
+        }
+        .infos-img-other-aside-form > .img-title {
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
+            color: #ffffff;
+        }
+        .infos-img-other-aside-form > .img-subtitle {
+            font-size: 11px;
+            letter-spacing: 0.3px;
+            font-weight: 300;
+            opacity: 0.8;
+            color: #ffffff;
+        }
+
+
+
+
+/* Form styles */
+
+    
+    .the-form-side {
+        height: max-content;
+        width: 100%;
+        max-width: 300px;
+        padding-top: 10%;
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+    .baserage-logo {
+        height: auto;
+        width: var(--logo-size);
+    }
+    .baserage-logo-span {
+        display: block;
+        height: 100%;
+        width: 100%;
+    }
+    .baserage-logo-span > svg {
+        width: 100%;
+        height: auto;
+    }
+
+    .form-login-signup {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .form-titles {
+        width: max-content;
+        display: flex;
+        gap: 4px;
+        flex-direction: column;
+    }
+    .form-title {
+        font-size: 15px;
+        font-weight: 400;
+    }
+    .form-subtitle {
+        font-size: 13px;
+        font-weight: 300;
+        opacity: 0.8;
+    }
+
+    .down-text-form {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .down-text-form > p {
+        font-size: 12px;
+        color: #999999;
+        font-weight: 300;
+    }
+    .down-text-form > p > a {
+        color: #000000;
+        font-weight: 300;
+    }
+
+    /* Inputs Styling */
+        .inputs-form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .the-form-input-styl-1 {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .lable-of-input-styl-1 {
+            width: max-content;
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 5px;
+        }
+        .msg-of-input-styl-1 {
+            position: absolute;
+            top: 2px;
+            right: 1px;
+            font-size: 11px;
+            font-weight: 400;
+            color: #999999;
+        }
+        .input-styl-1 {
+            height: 38px;
+            width: 100%;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 38px;
+            border: 1px solid #ddd;
+            padding: 0px 16px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        .input-styl-1:focus{
+            border-color: #000000;
+        }
+
+
+        .primary-btn-submit-form-styl-1 {
+            height: 40px;
+            width: 100%;
+            color: #ffffff;
+            background-color: #000000;
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            font-family: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            padding: 0px 16px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }

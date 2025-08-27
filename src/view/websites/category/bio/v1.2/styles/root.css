@@ -1,0 +1,76 @@
+:root {
+
+    --bg-color: #ffffff;
+
+    --text-color: #232323;
+
+    --box-bg-color: #ffffff;
+    --box-shadow: 0 0 0 0.5px #cdcdcd;
+    --box-font-color: #333333;
+    --box-font-size: 14px;
+    --box-icon-size: 24px;
+    --box-small-icon-size: 22px;
+
+    /*--font-family: "Inter", serif;*/
+    --letter-spaces: -0.1px;
+
+    /* Bento widgets: */
+    --bento-size: 170px;
+    --bento-body-width: calc((var(--bento-size) * 2) + var(--bento-gap));
+    --bento-gap: 16px;
+    --bento-normal-padding: 20px;
+    --bento-btn-padding: 8px;
+    --bento-small-btn-padding: 10px;
+    
+    --bento-h1-font-size: 20px;
+    --bento-h1-line-height: 22px;
+    --bento-h1-letter-spacing: -0.5px;
+    
+    --bento-h2-font-size: 18px;
+    --bento-h2-line-height: 20px;
+    --bento-h2-letter-spacing: -0.5px;
+
+    --bento-h3-font-size: 14px;
+    --bento-h3-line-height: 13px;
+    --bento-h3-letter-spacing: -0.3px;
+
+
+    --btn-size: 50px;
+    --bento-btn-size: 45px;
+    --btn-small-size: 30px;
+    --btn-bg-color: #ffffff;
+    --btn-gap: 10px;
+
+    --size-box-icon-media: 48px;
+    --size-icon-media: 80%;
+    --radius-icon-media: calc(var(--size-box-icon-media) / 4);
+    --margin-icon-txt: 12px;
+    --margin-5-px: 5px;
+
+    --radius: 12px;
+    --btn-radius: 50%;
+    --bento-btn-radius: calc(var(--btn-size) / 2 + var(--bento-btn-padding));
+    --normal-font-weight: 300;
+
+    /* Logo Styles -- */
+        --logo-font-size: 20px;
+        --logo-font-weight: 500;
+        --logo-letter-spacing: -1px;
+        --logo-pref-color: #003bff;
+        --logo-name-color: #000000;
+
+    /* Caption Bento Box */
+        --caption-height: 28px;
+        --caption-margin: 12px;
+        --caption-padding: 0 10px;
+        --caption-border-radius: 4px;
+        
+        --caption-font-size: 16px;
+        --caption-font-weight: 400;
+        --caption-font-letter-spacing: -0.3px;
+        --caption-font-line-height: 0;
+
+        --caption-default-bg-color: #ffffff;
+        --caption-font-default-color: #2b2b2b;
+
+}

@@ -1,0 +1,84 @@
+[
+    {
+        "id": 1,
+        "name": "Default",
+        "themes": [
+            {
+                "id": 1,
+                "name": "Default",
+                "container": {
+                    "className": "container_item_df_style",
+                    "var": {
+                        "--bg-color": "#ffffff",
+                        "--box-shadow": "rgb(242, 242, 242) 0px 0px 0px 1px",
+                        "--border-radius": "12px",
+                        "--padding": "15px"
+                    }
+                },
+                "content": {
+                    "text": {
+                        "h1": {
+                            "className": "content_item_txt_df_style",
+                            "var": {
+                                "--color": "#000000",
+                                "--font-size": "24px",
+                                "--font-weight": "400",
+                                "--font-family": "inherit"
+                            }
+                        },
+                        "h2": {
+                            "className": "content_item_txt_df_style",
+                            "var": {
+                                "--color": "#000000",
+                                "--font-size": "19px",
+                                "--font-weight": "400",
+                                "--font-family": "inherit"
+                            }
+                        }
+                    },
+                    "buttons": {
+                        "link": {
+                            "container": {
+                                "className": "content_item_btn_link_df_style"
+                            },
+                            "content": {
+                                "icon": {
+                                    "type": "svg",
+                                    "name": "arrow",
+                                    "path": null
+                                },
+                                "style": {
+                                    "color": "#ffffff",
+                                    "width": "12px"
+                                }
+                            }
+                        },
+                        "action": {
+                            "container": {
+                                "className": "content_item_btn_action_df_style",
+                                "var": {
+                                    "--bg-color": "#ffffff",
+                                    "--box-shadow": "0 0 0 1px rgba(0, 0, 0, 0.5)",
+                                    "--width": "32px",
+                                    "--height": "32px"
+                                }
+                                
+                            },
+                            "content": {
+                                "icon": {
+                                    "type": "svg",
+                                    "name": null,
+                                    "path": null
+                                },
+                                "style": {
+                                    "color": "#333333",
+                                    "width": "12px"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        ]
+    }
+]

@@ -1,0 +1,82 @@
+{
+  "treepath": {
+    "pageCategory": "bio",
+    "version": "v1.2",
+    "indexPath": "pages/Home",
+    "authRequired": true,
+    "data": {
+      "title": "Treepath",
+      "pic": "https://creatorspace.imgix.net/users/clz14u3740nngm101ey9qn67r/MpLpAr2jGXIq7lop-treepath_picture.jpg?w=300&h=300",
+      "bio": {
+        "b1": "Treepath your partner into your success",
+        "b2": "Everything you are. In one simple link."
+      },
+      "systemDesign": {
+        "layout": {
+          "desktop": {
+            
+          }
+        },
+        "typography": {
+          "family": "Inter"
+        },
+        "pic": {
+          "style": {
+            "borderRadius": "15%"
+          }
+        }
+      },
+      "widget": {
+        "type": "default",
+        "items": [
+          {
+            
+          }
+        ]
+      }
+    }
+  },
+  "khawladendani": {
+    "pageCategory": "bio",
+    "version": "v1.2",
+    "indexPath": "pages/Home",
+    "authRequired": true,
+    "data": {
+      "title": "Dr. Khawla Dendani",
+      "pic": "https://scontent.fcmn5-2.fna.fbcdn.net/v/t39.30808-6/518389251_122110386890931927_2636966813784282128_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFa6pPefXvVrNnCfgzcDCFDlFfjyUFWoaGUV-PJQVahof2_Ie2w1Y4FKYEg1GSb4xW5n_7QQ_UyDHsz4sof8CLV&_nc_ohc=LhXqQDCZR0MQ7kNvwFpdTY9&_nc_oc=Adk4G28y7jiDJoh36OMo5i5vQn_KI4qRz7OTNuPftawcSixAiWAhLaAwlGm-ep2AnUw&_nc_zt=23&_nc_ht=scontent.fcmn5-2.fna&_nc_gid=t8f2OHDrXXc-b5OfgbDg7w&oh=00_AfXvOG5TYO9caMuswPIc7WBOCIsNLilGamswGURUCJHHOw&oe=68ACDB57",
+      "bio": {
+        "b1": "Centre Dentaire Dendani",
+        "b2": "🦷 Médecin dentiste."
+      },
+      "systemDesign": {
+        "layout": {
+          "desktop": {
+            
+          }
+        },
+        "typography": {
+          "family": "Poppins"
+        },
+        "pic": {
+          "style": {
+            "borderRadius": "50%"
+          }
+        }
+      },
+      "widget": {
+        "type": "default",
+        "items": [
+          {
+
+          }
+        ]
+      }
+    }
+  },
+  "khawla_dendani": {
+    "pageCategory": "bio",
+    "version": "v1",
+    "indexPath": "pages/home",
+    "authRequired": false
+  }
+}
