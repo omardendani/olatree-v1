@@ -110,7 +110,7 @@ export default function DynamicWebsiteRoute() {
     }, [pageInfo]);
 
     //if (!pageInfo) return <Navigate to="/" />;
-    if (!pageInfo) return "error";
+    if (!pageInfo) return "error haha";
 
     const data = pageInfo.data;
 
