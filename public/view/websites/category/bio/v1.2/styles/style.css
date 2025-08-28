@@ -1,0 +1,9 @@
+/* importing styles */
+@import url(globals.css);
+@import url(layout.css);
+@import url(components/components.css);
+@import url(dashboard_admin/dashboard.css);
+@import url(dashboard_admin/components.css);
+
+/* Items */
+@import url(components/themes/default.css);

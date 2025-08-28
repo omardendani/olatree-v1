@@ -1,0 +1,317 @@
+@import url(../root.css);
+
+
+
+/* Head Components */
+
+    /* Logo */
+        .head-logo {
+            height: max-content;
+            width: max-content;
+        }
+
+        /* Logo Types :  */
+            .logo-type-1 {
+                display: flex;
+                flex-direction: row;
+                gap: 5px;
+            }
+            /* Logo Components */
+                .logo-prefix,
+                .logo-name {
+                    font-size: var(--logo-font-size);
+                    font-weight: var(--logo-font-weight);
+                    letter-spacing: var(--logo-letter-spacing);
+                }
+                .logo-prefix {
+                    color: var(--logo-pref-color);
+                }
+                .logo-name {
+                    color: var(--logo-name-color);
+                }
+            /* -------- */
+
+    /* Menu Buttons */
+        .head-menu {
+            display: flex;
+            flex-direction: row-reverse;
+            gap: var(--btn-gap);
+        }
+
+
+/* Head Components */
+
+/* Header */
+
+    /* Left : Texts */
+        .header-txt, .header-small-txt {
+            width: 100%;
+            height: max-content;
+        }
+        .header-h1 {
+            width: 100%;
+            font-size: 1.9rem;
+            letter-spacing: -0.5px;
+            font-weight: 400;
+            line-height: 1;
+        }
+        .header-h2 {
+            width: 100%;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: -0.5px;
+            font-weight: 300;
+            color: #787878;
+        }
+    
+    /* Right : (Timing) */
+        .timing-st1 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+        .time-st1> span {
+            font-size: 3.7rem;
+            font-weight: 400;
+            letter-spacing: -1px;
+            color: #000000;
+        }
+        .work-state-st1 {
+            font-size: 14px;
+            font-weight: 500;
+            color: #ff7e7e;
+        }
+
+    
+/* Bento boxes */
+
+    /* · Bento Items style · STYLE 1 · ( st1 )   --- */
+        
+        /* shared Styling */    /* Bento items : Normal / Social Media / Image / Message */
+            .bento-box-st1, .bento-box-media-link-st1, .bento-box-img-st1, .bento-box-textarea-st1 {
+                position: relative;
+                overflow: hidden;
+                border-radius: var(--radius);
+                padding: var(--bento-normal-padding);
+            }
+
+        /* Edited Styles : Colors / Borders */
+            .bento-box-st1{
+                background-color: #ffffff;
+                box-shadow: 0 0 0 1px #e9e9e9;
+            }
+            .bento-box-media-link-st1{
+                background-color: #ffffff;
+                box-shadow: 0 0 0 1px #e9e9e9;
+            }
+            .bento-box-textarea-st1{
+                background-color: #ffffff;
+                box-shadow: 0 0 0 1px #e9e9e9;
+            }
+            .bento-box-img-st1{
+                background-color: #ffffff;
+                box-shadow: 0 0 0 0 #e9e9e9;
+            }
+
+    /* Bento Content Items -- */
+    
+        /* shared Styling */
+            .bento-box-st1-ttl, .bento-box-media-link-st1-ttl, .bento-box-media-link-st1-url {
+                width: 100%;
+            }
+            .bento-box-st1-ttl> p, bento-box-media-link-st1-ttl> p, .bento-box-media-link-st1-url > a {
+                width: 100%;
+                font-weight: 400;
+                word-break: break-word;
+                color: #454545;
+            }
+
+        /* Bento : Normal Item */    
+            .bento-box-st1-ttl> p {
+                font-size: var(--bento-h1-font-size);
+                letter-spacing: var(--bento-h1-letter-spacing);
+                line-height: var(--bento-h1-line-height);
+            }
+
+        /* Bento : Media Link */
+            .bento-box-media-link-st1-ttl{ 
+                margin-bottom: var(--margin-5-px);
+            }
+            .bento-box-media-link-st1-ttl> p {
+                font-size: var(--bento-h2-font-size);
+                letter-spacing: var(--bento-h2-letter-spacing);
+                line-height: var(--bento-h2-line-height);
+                font-weight: 400;
+                color: #232323;
+            }
+            .bento-box-media-link-st1-url > a {
+                font-size: var(--bento-h3-font-size);
+                letter-spacing: var(--bento-h3-letter-spacing);
+                line-height: var(--bento-h3-line-height);
+                font-weight: 400;
+                color: #000000;
+            }
+
+        /* Bento : Caption (Img) */
+            .bento-box-caption-st1 {
+                position: absolute;
+                display: flex;
+                align-items: center;
+                bottom: var(--caption-margin);
+                left: var(--caption-margin);
+                height: var(--caption-height);
+                padding: var(--caption-padding);
+                border-radius: var(--caption-border-radius);
+                background-color: var(--caption-default-bg-color);
+            }
+            .bento-box-caption-st1> p {
+                font-size: var(--caption-font-size);
+                font-weight: var(--caption-font-weight);
+                letter-spacing: var(--caption-font-letter-spacing);
+                line-height: var(--caption-font-line-height);
+                color: var(--caption-font-default-color);
+            }
+
+        /* Bento : Image */
+            img.bento-img-st1 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                z-index: -1;
+            }
+            .btn-img-st1-ic {
+                height: var(--btn-small-size);
+                aspect-ratio: 1 / 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #ffffff;
+                box-shadow: 0 0 0 1.5px #ffffff;
+                border-radius: var(--btn-radius);
+            }
+
+        /* Bento : Buttons Place */    
+            .bento-box-st1-buttons-place {
+                position: absolute;
+                bottom: var(--bento-btn-padding);
+                right: var(--bento-btn-padding);
+                display: flex;
+                flex-direction: row;
+                gap: var(--bento-btn-padding);
+            }
+            .bento-box-img-st1-buttons-place {
+                position: absolute;
+                top: var(--bento-small-btn-padding);
+                right: var(--bento-small-btn-padding);
+                display: flex;
+                flex-direction: row;
+                gap: var(--bento-btn-padding);
+            }
+
+        /* Bento : Textarea */    
+            .bento-box-textarea-st1 > textarea {
+                height: calc((100% + var(--bento-normal-padding)) - var(--bento-btn-padding) - var(--bento-btn-size));
+                width: 100%;
+                background: none;
+                color: #000000;
+                font-size: 16px;
+                font-weight: 400;
+                letter-spacing: -0.3px;
+                line-height: 22px;
+                scrollbar-width: none;
+            }
+
+        /* Bento : Buttons */
+            .bento-btn-st1-ic {
+                height: var(--bento-btn-size);
+                aspect-ratio: 1/1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--box-bg-color);
+                box-shadow: var(--box-shadow);
+                border-radius: var(--bento-btn-radius);
+            }
+            .btn-st1-ic {
+                height: var(--btn-size);
+                aspect-ratio: 1/1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: var(--box-bg-color);
+                box-shadow: var(--box-shadow);
+                border-radius: var(--btn-radius);
+            }
+
+            /* Button Icon SVG : */
+                .bento-box-st1-btn-ic> svg {
+                    height: var(--box-icon-size);
+                    aspect-ratio: 1 / 1;
+                }
+                .bento-btn-st1-ic > svg{
+                    height: var(--box-icon-size);
+                    aspect-ratio: 1 / 1;
+                }
+                .btn-st1-ic> svg {
+                    height: var(--box-icon-size);
+                    aspect-ratio: 1 / 1;
+                }
+                .btn-img-st1-ic>svg {
+                    height: var(--box-small-icon-size);
+                    aspect-ratio: 1 / 1;
+                }
+    
+        /* Media icon */
+            .bento-box-media-link-st1-icon {
+                height: var(--size-box-icon-media);
+                aspect-ratio: 1/1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                /*background-color: var(--box-bg-color);
+                box-shadow: var(--box-shadow);*/
+                border-radius: var(--radius-icon-media);
+                margin-bottom: var(--margin-icon-txt);
+            }
+            .bento-box-media-link-st1-icon > span {
+                height: 100%;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .bento-box-media-link-st1-icon > span > svg {
+                height: var(--size-icon-media);
+                aspect-ratio: 1/1;
+            }
+
+
+
+
+/* */
+.bento-item-span-icon{
+    width: 100%;
+    height: 100%;
+}
+.bento-item-span-icon > img{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+
+.bento-item-span-icon-in-box{
+    display: block;
+    height: 50px;
+    width: 50px;
+}
+
+.bento-item-title-in-box{
+    margin-top: 20px;
+}
+.bento-item-text-in-box{
+    margin-top: 10px;
+}

@@ -1,0 +1,102 @@
+/* globals.css */
+@import url(root.css);
+@import url(fonts.css);
+
+
+/* 1. Reset général */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Styles de base pour body et html */
+html {
+  font-size: var(--font-size-x1);
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  font-weight: var(--normal-font-weight);
+  letter-spacing: var(--letter-spaces);
+  background-color: var(--bg-color);
+  line-height: 1;
+}
+
+/* 3. Liens (a) */
+a {
+  color: hwb(0 0% 100% / 1);
+  /* Couleur primaire */
+  text-decoration: none;
+}
+
+/*a:hover {
+  color: var(--text-color);
+  text-decoration: underline;
+}*/
+
+/* 4. Boutons (button, input[type="button"], input[type="submit"]) */
+button,
+input[type="button"],
+input[type="submit"] {
+  justify-content: start;
+  align-items: center;
+  font-family: var(--font-family);
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+button:disabled,
+input[type="button"]:disabled,
+input[type="submit"]:disabled {
+  cursor: not-allowed;
+}
+
+/* 5. Listes (ul, ol) */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 6. Formulaires (inputs, textarea) */
+input,
+textarea {
+  font-family: var(--font-family);
+  outline: none;
+  border: none;
+  resize: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000000;
+}
+
+/* 7. Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.display-none {
+  display: none;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.positionAbsolute {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+}
+
+/**/

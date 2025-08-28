@@ -17,7 +17,7 @@ export default function WebsiteLoader({ pageCategory, version, children }) {
         const link = document.createElement("link");
         link.id = linkId;
         link.rel = "stylesheet";
-        link.href = `/src/view/websites/category/${pageCategory}/${version}/styles/style.css`;
+        link.href = `/public/view/websites/category/${pageCategory}/${version}/styles/style.css`;
         document.head.appendChild(link);
 
         // Nettoyage lorsque le composant est démonté

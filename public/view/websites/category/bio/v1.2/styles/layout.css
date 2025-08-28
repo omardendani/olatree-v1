@@ -1,0 +1,166 @@
+@import url(root.css);
+
+
+/*
+    /src
+    └── contexts/
+
+    je peux pas dans ce folder faire un fichier gere ce que on a besoin au lieux de cree un fichoir dans les folder view DynamicPage.jsx
+
+    /src
+    └── App.jsx
+    └── Main.jsx
+    └── contexts/
+    └── layouts/
+    └── router/
+    └── utils/
+    └── view/
+        └── treepath/   # (Treepath est le nom de saas) la ou il y a le linding page, login et logout ...
+        └── websites/
+            └── category/
+                └── bio/
+                    └── v1/ # LA OU SE TROUVE LES PAGES DE USERS
+                    └── v2/
+    └── utils/
+    
+
+
+
+
+*/
+:root {
+    
+    /* Layout Margin */
+        --top-bord-marging: 5rem;
+        --bottom-bord-marging: 2rem;
+
+        --bord-marging: 5rem;
+
+        --mobile-top-bord-marging: 1rem;
+        --mobile-bord-marging: 1rem;
+
+        --tablet-top-bord-marging: 5rem;
+        --tablet-bord-marging: 5rem;
+
+        --small-tablet-top-bord-marging: 2rem;
+        --small-tablet-bord-marging: 2.5rem;
+
+        --sections-gap: 1rem;
+        
+    /* Grid Template */
+        --page-grid-template-columns: 1fr 1fr;
+        --page-grid-template-areas: "layout-left layout-body";
+        
+        --page-tablet-grid-template-columns: 1fr 1.5fr;
+        --page-tablet-grid-template-areas: "layout-left layout-body";
+        
+        --page-mobile-grid-template-columns: 1fr;
+        --page-mobile-grid-template-areas: "layout-left" "layout-body";
+}
+
+.home-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Layout */
+    .layout-container {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    /* Header : (Left & Right) */
+
+        .header-picture{
+            width: 10rem;
+            aspect-ratio: 1;
+            background-color: transparent;
+            border-radius: 15%;
+            overflow: hidden;
+            box-shadow: 0 0 0 1px #f0f0f0;
+        }
+        .dv-picture{
+            width: 100%;
+            height: 100%;
+        }
+        .dv-picture > img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .header-body {
+            position: sticky;
+            top: var(--layout-top-margin);
+            height: calc(100vh - var(--layout-top-margin));
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+    /* Bento Items : */
+        .bento-body {
+            position: relative;
+            width: 50%;
+        }
+
+    /* Footer */    
+        .footer {
+            position: fixed;
+            bottom: var(--bottom-bord-marging);
+            height: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            color: #909090;
+            display: flex;
+            align-items: center;
+        }
+
+
+@media only screen and (max-width: 1285px) { /* TABLET */
+    
+}
+
+@media only screen and (max-width: 1150px) { /* SMALL TABLET */
+
+    .header-h1 {
+        width: calc(100% - 20px);
+        font-size: 1.7rem;
+        font-weight: 300;
+        letter-spacing: var(--bento-h2-letter-spacing);
+        line-height: 1.9rem;
+    }
+}
+
+@media only screen and (max-width: 900px) { /* MOBILE */
+
+    .home-container {
+        max-width: 540px;
+        margin: 0 auto;
+    }
+
+    .layout-container {
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .header-body {
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+
+    .bento-body {
+        width: 100%;
+    }
+
+    .footer {
+        height: 100px;
+        position: relative;
+        bottom: 0;
+    }
+}

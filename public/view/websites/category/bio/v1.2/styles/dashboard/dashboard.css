@@ -1,0 +1,474 @@
+:root{
+    --window-margin: 6px;
+
+    --dash-bg-color: hsl(0deg 0% 5%);
+    --dash-bg-blur: blur(0px);
+
+    --border-radius: 8px;
+
+    --txt-color: #fff;
+
+    --input-bg-color: hsl(0, 0%, 15%);
+    --input-txt-color: #ffffff;
+    --input-txt-size: 12px;
+
+    --btn-bg-color: #f9f9f9;
+    --btn-txt-color: #000000;
+
+    --dash-nav-size: 40px;
+    --icon-size: 22px;
+}
+
+.dash-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* Style background : */
+    .dash-style-bg{
+        background-color: var(--dash-bg-color);
+        backdrop-filter: var(--dash-bg-blur);
+        box-shadow: 0 0 5px rgba(0, 0, 0, .04), 0 0px 31px rgba(0, 0, 0, .03), 0 10.4px 17.2px rgba(0, 0, 0, .024), 0 5.4px 8.775px rgba(0, 0, 0, .02), 0 2.2px 4.4px rgba(0, 0, 0, .016), 0 .5px 2.125px rgba(0, 0, 0, .01);
+    }
+/* Style background : */
+
+
+/* Dashboard center menu nav bar : */
+    .dash-nav-menu {
+        position: fixed;
+        top: 50%;
+        left: var(--window-margin);
+        transform: translateY(-50%);
+        overflow: hidden;
+        min-height: calc(var(--dash-nav-size) * 6);
+        min-width: var(--dash-nav-size);
+        padding-top: 2.5px;
+        padding-bottom: 2.5px;
+        border-radius: var(--border-radius);
+        z-index: 9999999999;
+    }
+    .menu-btns {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+/* Dashboard center menu nav bar : */
+
+/* Left Buttons : */ 
+    .dash-btns {
+        position: fixed;
+        top: var(--window-margin);
+        left: var(--window-margin);
+        display: flex;
+        flex-direction: column;
+        gap: var(--window-margin);
+        z-index: 999999999;
+    }
+
+    .dash-btns-button-in-container,
+    .dash-btns-button {
+        aspect-ratio: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .dash-btns-button{ 
+        height: calc(var(--dash-nav-size) - 0px); 
+        border-radius: calc(var(--border-radius));
+    }
+    .dash-btns-button-in-container{ 
+        height: calc(var(--dash-nav-size) - 5px); 
+        border-radius: calc(var(--border-radius) / 1.5);
+    }
+
+    .dash-btns-button-in-container > svg,
+    .dash-btns-button > svg {
+        height: var(--icon-size);
+        opacity: 1;
+        transition: .25s;
+    }
+
+    .dash-btns-button-in-container:hover,
+    .dash-btns-button:hover {
+        background-color: #282828;
+    }
+
+/* Dashboard settings things : */
+    .dash-btns-containe-click {
+        min-width: 190px;
+        position: fixed;
+        left: calc(var(--dash-nav-size) + var(--window-margin) * 2);
+        top: var(--window-margin);
+        z-index: 9999999999;
+    }
+    .dash-settings-profile {
+        padding: 5px;
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column;
+    }
+    .dash-setting-thing {
+        display: flex;
+        flex-direction: column;
+        padding: 12px 15px;
+        border-radius: calc( var(--border-radius) / 2);
+        gap: 6px;
+        cursor: pointer;
+        transition: 0.15s;
+    }
+    .dash-setting-thing:hover {
+        background-color: hsl(0 0% 15% / 1);
+    }
+
+    .setting-thing-title {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--txt-color);
+    }
+    .setting-thing-value {
+        font-size: 11px;
+        font-weight: 400;
+        color: var(--txt-color);
+        opacity: .6;
+    }
+    .setting-thing-btn {
+        height: 25px;
+        font-size: 13px;
+        font-weight: 400;
+        color: var(--txt-color);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+
+
+    /* Form edit setting : */
+    .dash-settings-profile-forms {
+        position: absolute;
+        top: 0;
+        left: calc(100% + 6px);
+        min-width: 18rem;
+        z-index: 999999999;
+    }
+
+    .dash-settings-profile-sub-form {
+        height: 100%;
+        width: 100%;
+        padding: 12px;
+        border-radius: var(--border-radius);
+        display: flex;
+        flex-direction: column;
+    }
+
+        /* Title & Sub Title*/
+            .dash-settings-profile-form-title {
+                width: max-content;
+                font-size: 12px;
+                font-weight: 400;
+                color: var(--txt-color);
+                margin-bottom: 5px;
+            }
+
+            .dash-settings-profile-form-sub-title {
+                width: max-content;
+                font-size: 11px;
+                font-weight: 400;
+                color: var(--txt-color);
+                opacity: .6;
+            }
+
+    .dash-settings-profile-input-forms {
+        width: 100%;
+        height: max-content;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+
+        /* Input & Button */
+            .dash-settings-profile-input-form-input {
+                height: 35px;
+                border-radius: calc(var(--border-radius)/2);
+                background-color: var(--input-bg-color);
+                color: var(--input-txt-color);
+                font-size: var(--input-txt-size);
+                padding: 2px 10px;
+            }
+
+            .dash-settings-profile-input-form-button {
+                height: 35px;
+                border-radius: calc(var(--border-radius)/2);
+                background-color: var(--btn-bg-color);
+                color: var(--btn-txt-color);
+                font-size: var(--input-txt-size);
+                font-weight: 500;
+            }
+
+            /* Custom Input Prefix */
+                .dash-settings-profile-prefix-input-form-txt {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    height: 35px;
+                    border-radius: calc(var(--border-radius)/2);
+                    background-color: var(--input-bg-color);
+                    padding: 2px 6px;
+                }
+                .dash-settings-profile-prefix-input-form-input-prefix {
+                    font-size: var(--input-txt-size); 
+                    font-weight: 400;
+                    padding-right: 2px;
+                    color: var(--input-txt-color);
+                }
+                .dash-settings-profile-prefix-input-form-input_prefix_input{
+                    height: 100%;
+                    min-width: 180px;       
+                    background: none;
+                    color: var(--input-txt-color);
+                    font-size: var(--input-txt-size);
+                }
+    /* */
+        .active_setting_list {
+            animation-name: setting_list_style;
+            animation-duration: .6s;
+            animation-timing-function: cubic-bezier(.44,1.62,.48,.97);
+        }
+        .active_setting_form{
+            animation-name: setting_list_form_style;
+            animation-duration: .5s;
+            animation-timing-function: cubic-bezier(.31,1.38,.47,.99);
+        }
+        @keyframes setting_list_style {
+            0% {
+                transform: perspective(1000px) rotate3d(1, .5, 0, 20deg) scale3d(.9, .9, 1);
+                opacity: 0;
+            }
+
+            100% {
+                transform: perspective(1000px) rotate3d(1, .5, 0, 0deg) scaleX(1);
+                opacity: 1;
+            }
+        }
+        @keyframes setting_list_form_style {
+            0% {
+                opacity: 0;
+                transform: rotate(4deg) translateX(-15px)
+            }
+
+            to {
+                opacity: 1;
+                transform: rotate(0deg) translateX(0)
+            }
+        }
+
+
+/**
+        Bento Controls
+        
+*/
+    /* BentoControls.css */
+    .bento-controls {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 12px;
+        padding: 16px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        min-width: 200px;
+    }
+
+    .bento-controls__group {
+        display: flex;
+        gap: 8px;
+    }
+
+    .bento-controls__btn {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        padding: 8px 12px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 6px;
+        background: white;
+        color: #333;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        position: relative;
+    }
+
+    .bento-controls__btn:hover:not(.disabled) {
+        background: #f8f9fa;
+        border-color: rgba(0, 0, 0, 0.2);
+        transform: translateY(-1px);
+    }
+
+    .bento-controls__btn:active:not(.disabled) {
+        transform: translateY(0);
+    }
+
+    .bento-controls__btn.disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+        color: #999;
+    }
+
+    .bento-controls__btn svg {
+        flex-shrink: 0;
+    }
+
+    /* Bouton sauvegarder */
+    .bento-controls__btn--save {
+        background: #0066cc;
+        color: white;
+        border-color: #0066cc;
+    }
+
+    .bento-controls__btn--save:hover:not(.disabled) {
+        background: #0052a3;
+        border-color: #0052a3;
+    }
+
+    .bento-controls__btn--save.has-changes {
+        background: #ff6b35;
+        border-color: #ff6b35;
+        animation: pulse-save 2s infinite;
+    }
+
+    .bento-controls__btn--save.has-changes:hover {
+        background: #e55a2b;
+        border-color: #e55a2b;
+    }
+
+    /* Bouton reset */
+    .bento-controls__btn--reset {
+        background: #dc3545;
+        color: white;
+        border-color: #dc3545;
+    }
+
+    .bento-controls__btn--reset:hover {
+        background: #c82333;
+        border-color: #c82333;
+    }
+
+    /* Point indicateur de changements */
+    .changes-dot {
+        color: #fff;
+        font-size: 16px;
+        line-height: 1;
+        margin-left: 2px;
+        animation: pulse-dot 1.5s infinite;
+    }
+
+    /* Raccourcis clavier */
+    .bento-controls__shortcuts {
+        padding-top: 8px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .shortcut-hint {
+        font-size: 11px;
+        color: #666;
+        line-height: 1.4;
+    }
+
+    .shortcut-hint kbd {
+        background: #f1f3f4;
+        border: 1px solid #dadce0;
+        border-radius: 3px;
+        padding: 1px 4px;
+        font-size: 10px;
+        font-weight: 500;
+        color: #202124;
+    }
+
+    /* Animations */
+    @keyframes pulse-save {
+        0%, 100% {
+            box-shadow: 0 2px 8px rgba(255, 107, 53, 0.3);
+        }
+        50% {
+            box-shadow: 0 2px 16px rgba(255, 107, 53, 0.5);
+        }
+    }
+
+    @keyframes pulse-dot {
+        0%, 100% {
+            opacity: 1;
+        }
+        50% {
+            opacity: 0.5;
+        }
+    }
+
+    /* Mode sombre (optionnel) */
+    @media (prefers-color-scheme: dark) {
+        .bento-controls {
+            background: rgba(30, 30, 30, 0.95);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .bento-controls__btn {
+            background: #2d2d2d;
+            color: #e0e0e0;
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .bento-controls__btn:hover:not(.disabled) {
+            background: #3a3a3a;
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .shortcut-hint {
+            color: #a0a0a0;
+        }
+        
+        .shortcut-hint kbd {
+            background: #404040;
+            border-color: #555;
+            color: #e0e0e0;
+        }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .bento-controls {
+            position: relative;
+            top: auto;
+            right: auto;
+            margin-bottom: 20px;
+            width: 100%;
+            min-width: auto;
+        }
+        
+        .bento-controls__group {
+            justify-content: center;
+        }
+        
+        .bento-controls__shortcuts {
+            text-align: center;
+        }
+    }
+
+
+/**
+        Bento Controls
+        
+*/

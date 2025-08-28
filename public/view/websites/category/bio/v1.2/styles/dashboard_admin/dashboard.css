@@ -1,0 +1,65 @@
+:root{
+    --dash__window-margin: 6px;
+    --dash__z-index: 999999;
+
+    --dash__base-size: 34px;
+
+    --dash__bg-color: hsl(0deg 0% 5%);
+    --dash__txt-color: #ffffff;
+    --dash__border-radius: 4px;
+
+    --dash__menu-btn-text-size: 14px;
+    --dash__menu-btn-text-letter-spacing: -0.4px;
+
+    --dash__icon-size: 20px;
+}
+
+.dash-container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+/* Menu */
+    .dash-menu{
+        position: absolute;
+        right: var(--dash__window-margin);
+        top: var(--dash__window-margin);
+        z-index: var(--dash__z-index);
+
+        height: var(--dash__base-size);
+        width: max-content;
+        padding: 0 30px;
+
+        display: flex;
+        flex-direction: row;
+        gap: 30px;
+
+        background-color: var(--dash__bg-color);
+        border-radius: var(--dash__border-radius);
+    }
+
+    /* Menu Buttons: */
+        .dash-menu-button{
+            color: var(--dash__txt-color);
+            height: auto;
+            width: auto;
+            font-size: var(--dash__menu-btn-text-size);
+            letter-spacing: var(--dash__menu-btn-text-letter-spacing);
+            font-family: inherit;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        .dash-menu-button > span{
+            width: var(--dash__icon-size);
+            height: auto;
+            
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
