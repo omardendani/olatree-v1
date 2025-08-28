@@ -10,7 +10,7 @@ import { PageDataProvider } from "../contexts/PageDataContext.jsx";
 const loadTemplateComponent = (pageCategory, version, indexPath) =>
     lazy(() =>
         import(
-            `../view/websites/category/${pageCategory}/${version}/${indexPath}`
+            `../view/websites/category/${pageCategory}/${version}/${indexPath}.jsx`
         ).then((module) => ({ default: module.default }))
     );
 

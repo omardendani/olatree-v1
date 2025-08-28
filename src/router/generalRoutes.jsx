@@ -8,18 +8,18 @@ import GuestLayout from "../layouts/Baserage/GuestLayout.jsx";
 // Chargement dynamique avec React.lazy
 const loadUserComponent = (templateName, componentPath) =>
     lazy(() =>
-            import(`../view/Baserage/${templateName}/${componentPath}`).then((module) => ({
+            import(`../view/Baserage/${templateName}/${componentPath}.jsx`).then((module) => ({
             default: module.default,
         }))
     );
 
 // Chargement des composants du template
 const templateName = "default"; // Exemple : récupéré dynamiquement
-const LoginLayout = loadUserComponent(templateName, "layouts/LoginLayout.jsx");
+const LoginLayout = loadUserComponent(templateName, "layouts/LoginLayout");
 
-const Home = loadUserComponent(templateName, "pages/Home.jsx");
-const Login = loadUserComponent(templateName, "pages/Login.jsx");
-const Signup = loadUserComponent(templateName, "pages/Signup.jsx");
+const Home = loadUserComponent(templateName, "pages/Home");
+const Login = loadUserComponent(templateName, "pages/Login");
+const Signup = loadUserComponent(templateName, "pages/Signup");
 
 
 // Déclaration des routes générales
