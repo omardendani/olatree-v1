@@ -33,7 +33,7 @@ const loadComponent = (templateName, pageName) => {
   return LazyComponent;
 };
 
-export default function DynamicWebsiteRoute() {
+export default function DynamicWebsite___Route() {
   const { profilename } = useParams();
   const [Component, setComponent] = useState(null);
   const [pageInfo, setPageInfo] = useState(null);
@@ -105,3 +105,97 @@ export default function DynamicWebsiteRoute() {
     </WebsiteLoader>
   );
 }
+
+
+export default function DynamicWebsiteRoute() {
+    const { profilename } = useParams();
+    const [Component, setComponent] = useState(null);
+    const [pageInfo, setPageInfo] = useState(null);
+
+    const user = useAuthUser();
+
+    useEffect(() => {
+
+        const info = pageData[profilename];
+
+        if (!info) {
+            setPageInfo(null);
+            return;
+        }
+
+        const Comp = loadTemplateComponent(
+            info.pageCategory,
+            info.version,
+            info.indexPath
+        );
+
+        setComponent(() => Comp);
+        setPageInfo(info);
+    }, [profilename]);
+    
+    useEffect(() => {
+        if (!pageInfo?.data) return;
+
+        // --- TITLE ---
+        if (pageInfo.data.title) {
+            document.title = pageInfo.data.title;
+        }
+
+        // --- FAVICON ---
+        if (pageInfo.data.pic) {
+            let favicon = document.querySelector("link[rel='icon']");
+            if (!favicon) {
+                favicon = document.createElement("link");
+                favicon.rel = "icon";
+                document.head.appendChild(favicon);
+            }
+            favicon.href = pageInfo.data.pic;
+        }
+
+        // --- TYPOGRAPHY ---
+        const defaultFont = "Inter";
+        const fontFamily = pageInfo.data.systemDesign.typography.family || defaultFont;
+
+        // Vérifie si la font est déjà ajoutée
+        const existingLink = document.querySelector(`link[data-font='${fontFamily}']`);
+        if (!existingLink) {
+            const link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.href = `https://fonts.googleapis.com/css2?family=${fontFamily.replace(
+                " ",
+                "+"
+            )}:wght@400;500;600;700&display=swap`;
+            link.setAttribute("data-font", fontFamily);
+            document.head.appendChild(link);
+        }
+
+        // Appliquer la font à tout le document
+        document.body.style.fontFamily = `"${fontFamily}", sans-serif`;
+        document.body.style.setProperty("--font-family", `"${fontFamily}", sans-serif`);
+    }, [pageInfo]);
+
+    //if (!pageInfo) return <Navigate to="/" />;
+    if (!pageInfo) return "error";
+
+    const data = pageInfo.data;
+
+    return (
+        <WebsiteLoader
+            version={pageInfo.version}
+            pageCategory={pageInfo.pageCategory}
+        >
+            <Suspense fallback={<div>Loading...</div>}>
+                <PageDataProvider data={data}>
+                    {pageInfo.authRequired && user ? (
+                        <Dashboard>
+                            <Component authData={{ isAuthenticated: true }} />
+                        </Dashboard>
+                    ) : (
+                        <Component />
+                    )}
+                </PageDataProvider>
+            </Suspense>
+        </WebsiteLoader>
+    );
+}
+
