@@ -33,7 +33,7 @@ const loadComponent = (templateName, pageName) => {
   return LazyComponent;
 };
 
-export default function DynamicWebsite___Route() {
+export function DynamicWebsite___Route() {
   const { profilename } = useParams();
   const [Component, setComponent] = useState(null);
   const [pageInfo, setPageInfo] = useState(null);
