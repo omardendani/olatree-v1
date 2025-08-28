@@ -1,0 +1,1 @@
+function n(s){try{const t=new URL(s);let e=t.hostname;e.startsWith("www.")&&(e=e.substring(4));let o=e.split(".")[0];return o=o.charAt(0).toUpperCase()+o.slice(1).toLowerCase(),{siteName:t.hostname,favicon:`https://www.google.com/s2/favicons?sz=64&domain=${t.hostname}`,title:o}}catch(t){return console.error("Invalid URL:",t),null}}export{n as getSiteInfo};
