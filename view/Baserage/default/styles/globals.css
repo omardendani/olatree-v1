@@ -1,0 +1,223 @@
+/* globals.css */
+@import url(fonts.css);
+
+:root{
+
+  /* Width */
+  --global-width: calc(100% - (120px * 2));
+
+  --font-family: 'Poppins', sans-serif;
+  --font-size-x1: 14px;
+  --font-size-x2: 15px;
+  --font-color: #000000;
+  --letter-spaces: -0.5px;
+  --font-weight: 100;
+  --font-weight-2: 200;
+  --font-weight-3: 300;
+  --font-weight-4: 400;
+  --font-weight-5: 500;
+  --font-weight-6: 600;
+
+  
+  --border-radius: 6px;
+
+  --bg-color: #ffffff;
+  --bg-color-smock: #f4f4f4;
+
+  --column-gap-1: 10px;
+  --column-gap-2: 20px;
+  --column-gap-3: 30px;
+  --column-gap-4: 40px;
+
+  /* Buttons */
+  --btn-heigth: 32px;
+  --btn-padding: 0 20px;
+  --btn-border-radius: 6px;
+  --btn-text-size: 13px;
+  --btn-text-weight: var(--font-weight-4);
+
+  --btn-s1-bg-color: #000000;
+  --btn-s1-bg-color-hover: #000000;
+  --btn-s1-text-color: #ffffff;
+  --btn-s1-text-color-hover: #ffffffe0;
+
+  
+  --btn-s2-bg-color: #0032ff;
+
+  --link-color: #000000;
+  --link-color-hover: #505050;
+  
+  
+
+
+}
+
+/* 1. Reset général */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Styles de base pour body et html */
+html {
+  font-size: var(--font-size-x1);
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--font-color);
+  font-weight: var(--font-weight-3);
+  letter-spacing: var(--letter-spaces);
+  background-color: #ffffff;
+  line-height: 1;
+}
+
+/* 3. Liens (a) */
+a {
+  color: hwb(0 0% 100% / 0.6); /* Couleur primaire */
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--font-color);
+  text-decoration: underline;
+}
+
+/* 4. Boutons (button, input[type="button"], input[type="submit"]) */
+  /*button,
+  input[type="button"],
+  input[type="submit"] {
+    height: var(--btn-heigth);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: inherit;
+    font-size: var(--btn-text-size);
+    font-weight: var(--btn-text-weight);
+    color: var(--btn-s1-text-color);
+    background-color: var(--btn-s1-bg-color);
+    border: none;
+    border-radius: var(--btn-border-radius);
+    padding: var(--btn-padding);
+    cursor: pointer;
+    transition: 0.2s ease;
+  }
+
+  button:hover,
+  input[type="button"]:hover,
+  input[type="submit"]:hover {
+    color: var(--btn-s1-text-color-hover);
+  }
+
+  button:disabled,
+  input[type="button"]:disabled,
+  input[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+
+/* 5. Listes (ul, ol) */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* 6. Formulaires (inputs, textarea) */
+input,
+textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  color: #000000;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px 12px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000000;
+}
+
+/* 7. Images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.display-none{ display: none; }
+.invisible{ visibility: hidden; }
+
+.main{
+  height: calc(100vh - 60px);
+  width: 100%;
+}
+
+/*
+.buttons-call-to-action {
+  position: absolute;
+  bottom: 60px;
+  right: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: var(--column-gap-1);
+}
+
+
+.principal-btn{
+  height: 30px;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  border-radius: var(--border-radius);
+  column-gap: var(--column-gap-1);
+  column-gap: var(--column-gap-1);
+  padding: var(--btn-padding);
+}
+
+.principal-btn-st1{
+  background-color: var(--btn-s1-bg-color);
+  color: var(--btn-s1-text-color);
+  font-size: var(--btn-text-size);
+}
+
+.principal-btn-st2{
+  background-color: var(--btn-s2-bg-color);
+  color: var(--btn-s1-text-color);
+}
+
+.principal-btn:hover{
+  color: var(--btn-s1-text-color-hover);
+}
+
+.principal-btn > span {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-text-st1{
+  font-size: 13px;
+  color: #5a5a5a;
+}
+
+.icon-clicking{
+  opacity: 1;
+  transition: 0.1s;
+}
+.icon-clicking:hover {
+  opacity: 0.5;
+}*/
