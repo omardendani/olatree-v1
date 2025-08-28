@@ -1,0 +1,1 @@
+import{j as r}from"./index-Ch0d5zCX.js";function f({phone:e,message:t,button:s}){const a=`https://wa.me/${e}?text=${encodeURIComponent(t||"Hi, this is a default whatsapp message from OlaTree")}`;return r.jsx("a",{href:a,target:"_blank",rel:"noopener noreferrer",children:s})}export{f as default};
