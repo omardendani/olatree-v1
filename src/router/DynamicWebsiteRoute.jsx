@@ -15,7 +15,7 @@ const componentCache = new Map();
 const loadComponent = (templateName, indexPath, version) => {
   // Cherche la clé correspondant au fichier voulu
   const matchedPath = Object.keys(modules).find(key =>
-    key.endsWith(`${templateName}/${version}/${indexPath}.jsx`)
+    key.includes(`/${templateName}/${version}/${indexPath}.jsx`)
   );
 
   if (!matchedPath) {
