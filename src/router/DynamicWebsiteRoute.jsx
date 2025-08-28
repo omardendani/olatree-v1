@@ -111,7 +111,6 @@ export default function DynamicWebsiteRoute() {
 
     //if (!pageInfo) return <Navigate to="/" />;
 
-    console.log(pageData);
     if (!pageInfo) return "error haha";
     const data = pageInfo.data;
 
