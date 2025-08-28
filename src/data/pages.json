@@ -302,7 +302,7 @@
     "authRequired": true,
     "data": {
       "title": "Dr. Khawla Dendani",
-      "pic": "https://scontent.fcmn5-2.fna.fbcdn.net/v/t39.30808-6/518389251_122110386890931927_2636966813784282128_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFa6pPefXvVrNnCfgzcDCFDlFfjyUFWoaGUV-PJQVahof2_Ie2w1Y4FKYEg1GSb4xW5n_7QQ_UyDHsz4sof8CLV&_nc_ohc=LhXqQDCZR0MQ7kNvwFpdTY9&_nc_oc=Adk4G28y7jiDJoh36OMo5i5vQn_KI4qRz7OTNuPftawcSixAiWAhLaAwlGm-ep2AnUw&_nc_zt=23&_nc_ht=scontent.fcmn5-2.fna&_nc_gid=t8f2OHDrXXc-b5OfgbDg7w&oh=00_AfXvOG5TYO9caMuswPIc7WBOCIsNLilGamswGURUCJHHOw&oe=68ACDB57",
+      "pic": "./users/pic/centredentairedendani.jpg",
       "bio": {
         "b1": "Centre Dentaire Dendani",
         "b2": "🦷 Médecin dentiste."
@@ -361,7 +361,7 @@
             "position": {
               "mobile": {
                 "x": 0,
-                "y": 7
+                "y": 5
               },
               "desktop": {
                 "x": 2,
@@ -448,11 +448,11 @@
             "position": {
               "mobile": {
                 "x": 2,
-                "y": 7
+                "y": 9
               },
               "desktop": {
                 "x": 4,
-                "y": 7
+                "y": 5
               }
             }
           },
@@ -498,7 +498,7 @@
               },
               "desktop": {
                 "x": 4,
-                "y": 7
+                "y": 9
               }
             }
           },
@@ -541,8 +541,8 @@
             },
             "style": {
               "mobile": {
-                "h": 3,
-                "w": 3
+                "h": 2,
+                "w": 4
               },
               "desktop": {
                 "h": 2,
@@ -551,8 +551,8 @@
             },
             "position": {
               "mobile": {
-                "x": 1,
-                "y": 4
+                "x": 0,
+                "y": 7
               },
               "desktop": {
                 "x": 0,
@@ -598,11 +598,11 @@
             "position": {
               "mobile": {
                 "x": 2,
-                "y": 9
+                "y": 11
               },
               "desktop": {
                 "x": 4,
-                "y": 11
+                "y": 7
               }
             }
           }
