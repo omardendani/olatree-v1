@@ -7,7 +7,7 @@ import { useAuthUser } from "../hooks/useAuthUser.js";
 import { PageDataProvider } from "../contexts/PageDataContext.jsx";
 
 // --- Import dynamique sécurisé ---
-const modules = import.meta.glob('../view/Baserage/**/*.jsx');
+const modules = import.meta.glob('../view/websites/category/**/*.jsx');
 
 // Cache pour éviter de recréer les composants lazy
 const componentCache = new Map();
