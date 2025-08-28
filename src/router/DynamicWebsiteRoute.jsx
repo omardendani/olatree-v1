@@ -15,11 +15,11 @@ const componentCache = new Map();
 const loadComponent = (templateName, indexPath, version) => {
   // Cherche la clé correspondant au fichier voulu
   const matchedPath = Object.keys(modules).find(key =>
-    key.endsWith(`${templateName}//${version}/${indexPath}.jsx`)
+    key.endsWith(`${templateName}/${version}/${indexPath}.jsx`)
   );
 
   if (!matchedPath) {
-    console.error(`Component not found: ${templateName}/${indexPath}.jsx`);
+    console.error(`Component not found: ${templateName}/${version}/${indexPath}.jsx`);
     console.log('Available modules:', Object.keys(modules));
     return null;
   }
