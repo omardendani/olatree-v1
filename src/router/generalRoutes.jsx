@@ -1,28 +1,17 @@
-import { lazy, Suspense } from "react";
-
+import { Suspense } from "react";
 import BaserageLoader from "../utils/BaserageLoader.jsx";
-
 import DefaultLayout from "../layouts/Baserage/DefaultLayout.jsx";
 import GuestLayout from "../layouts/Baserage/GuestLayout.jsx";
+import { loadComponent } from "../utils/dynamicImports.js";
 
-// Chargement dynamique avec React.lazy
-const loadUserComponent = (templateName, componentPath) =>
-    lazy(() =>
-            import(`../view/Baserage/${templateName}/${componentPath}.jsx`).then((module) => ({
-            default: module.default,
-        }))
-    );
+const templateName = "default";
 
-// Chargement des composants du template
-const templateName = "default"; // Exemple : récupéré dynamiquement
-const LoginLayout = loadUserComponent(templateName, "layouts/LoginLayout");
+// Charger les composants dynamiquement
+const LoginLayout = loadComponent(templateName, "layouts/LoginLayout");
+const Home = loadComponent(templateName, "pages/Home");
+const Login = loadComponent(templateName, "pages/Login");
+const Signup = loadComponent(templateName, "pages/Signup");
 
-const Home = loadUserComponent(templateName, "pages/Home");
-const Login = loadUserComponent(templateName, "pages/Login");
-const Signup = loadUserComponent(templateName, "pages/Signup");
-
-
-// Déclaration des routes générales
 export const generalRoutes = [
     {
         path: "/",
@@ -36,7 +25,7 @@ export const generalRoutes = [
         children: [
             {
                 index: true,
-                element: <Home/>,
+                element: Home ? <Home/> : <div>Home component not found</div>,
             },
             {
                 path: "contact",
@@ -50,7 +39,7 @@ export const generalRoutes = [
             <Suspense fallback={<div>Loading...</div>}>
                 <BaserageLoader templateName={templateName}>
                     <GuestLayout>
-                        <LoginLayout/>
+                        {LoginLayout ? <LoginLayout/> : <div>LoginLayout not found</div>}
                     </GuestLayout>
                 </BaserageLoader>
             </Suspense>
@@ -58,11 +47,11 @@ export const generalRoutes = [
         children: [
             {
                 path: "login",
-                element: <Login />,
+                element: Login ? <Login /> : <div>Login component not found</div>,
             },
             {
                 path: "signup",
-                element: <Signup />,
+                element: Signup ? <Signup /> : <div>Signup component not found</div>,
             },
         ],
     },
