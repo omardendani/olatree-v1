@@ -85,7 +85,7 @@ export default function DynamicWebsiteRoute() {
 
   // page non trouvée
   //if (!pageInfo) return <Navigate to="/login" />; 
-  if (!pageInfo) return "Page Non existe ..."
+  if (!pageInfo) return("Page Non existe ...")
 
   const data = pageInfo.data;
 
