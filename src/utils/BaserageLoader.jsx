@@ -16,7 +16,7 @@ export default function BaserageLoader({ templateName, children }) {
         const link = document.createElement("link");
         link.id = linkId;
         link.rel = "stylesheet";
-        link.href = `/public/view/Baserage/${templateName}/styles/style.css`;
+        link.href = `/view/Baserage/${templateName}/styles/style.css`;
         document.head.appendChild(link);
 
         // Nettoyage lorsque le composant est démonté
