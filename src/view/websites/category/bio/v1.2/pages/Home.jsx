@@ -1,5 +1,5 @@
 import { useRef, } from "react";
-import { Header } from "../components/header/Header.jsx";
+import { Header } from "../components/header/header.jsx";
 import { Edit_Mode_Bento, Viewer_Mode_Bento } from './Sections/Bento.jsx';
 import { usePageData } from "../../../../../../contexts/PageDataContext.jsx";
 import { useLayoutMargins } from "../utils/useLayoutMargins.jsx";
