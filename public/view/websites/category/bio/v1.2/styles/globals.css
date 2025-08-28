@@ -24,6 +24,7 @@ body {
   letter-spacing: var(--letter-spaces);
   background-color: var(--bg-color);
   line-height: 1;
+  overflow-x: hidden;
 }
 
 /* 3. Liens (a) */
