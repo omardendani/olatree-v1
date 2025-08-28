@@ -1,5 +1,8 @@
 // 1. CONFIGURATION ET CONSTANTES
     // config/bentoConfig.js
+
+import { usePageData } from "../../../../../../../../contexts/PageDataContext";
+
     
 
 export const GENERAL_CONFIG = {
@@ -201,24 +204,31 @@ export const WIDGET_TEMPLATE = {
                 container: {
                     background: 'var(--bg)',
                     boxShadow: 'rgb(242 242 242) 0px 0px 0px 0px',
+                    backgroundPosition: "--bg-position",
+                    backgroundSize: "cover",
                     padding: design_system.widget.default.regular.style.padding,
-                    borderRadius: design_system.widget.default.regular.style.borderRadius
+                    borderRadius: design_system.widget.default.regular.style.borderRadius,
                 },
                 text: {
                     color: 'var(--color)',
                     fontFamily: 'var(--font-family)',
-                    lineHeight: design_system.typography.body.b2.lineHeight,
-                    fontSize: design_system.typography.body.b2.size,
-                    fontWeight: design_system.typography.body.b2.weight,
-                    letterSpacing: design_system.typography.body.b2.letterSpacing,
+                    lineHeight: "var(--lineHeight)",
+                    fontSize: "var(--fontSize)",
+                    fontWeight: "var(--fontWeight)",
+                    letterSpacing: "var(--letterSpacing)",
                 }
             },
             var: {
                 container: {
-                    "--bg": "#dddddd"
+                    "--bg": "#dddddd",
+                    "--bg-position": "50% 50%"
                 },
                 text: {
-                    "--color": "#000000"
+                    "--color": "#000000",
+                    "--lineHeight": "1.2",
+                    "--fontSize": "16px",
+                    "--fontWeight": "400",
+                    "--letterSpacing": "-1px"
                 }
             },
             content: {
@@ -353,10 +363,10 @@ export const WIDGET_TEMPLATE = {
                 value: {
                     color: 'var(--color)',
                     fontFamily: 'var(--font-family)',
-                    lineHeight: design_system.typography.headline.h4.lineHeight,
-                    fontSize: design_system.typography.headline.h4.size,
-                    fontWeight: design_system.typography.headline.h4.weight,
-                    letterSpacing: design_system.typography.headline.h4.letterSpacing,
+                    lineHeight: "var(--lineHeight)",
+                    fontSize: "var(--fontSize)",
+                    fontWeight: "var(--fontWeight)",
+                    letterSpacing: "var(--letterSpacing)",
                 },
                 btn: {
                     container: {
@@ -373,7 +383,14 @@ export const WIDGET_TEMPLATE = {
                             cursor: 'pointer',
                         },
                         icon: {
-
+                            background: "var(--bg)",
+                            boxShadow: '#dcdcdc 0px 0px 0px 0px',
+                            display: "block",
+                            height: "55px",
+                            width: "55px",
+                            padding: "20%",
+                            borderRadius: "8px",
+                            cursor: 'pointer',
                         }
                     }
                 }
@@ -381,14 +398,19 @@ export const WIDGET_TEMPLATE = {
             },
             var: {
                 container: {
-                    "--bg": "#dddddd"
+                    "--bg": "#f8f8f8"
                 },
                 value: {
-                    "--color": "#000000"
+                    "--color": "#000000",
+                    "--lineHeight": "1.2",
+                    "--fontSize": "24px",
+                    "--fontWeight": "400",
+                    "--letterSpacing": "-0.6px"
                 },
                 btn: {
                     content: {
-                        text: {"--color": "#000000"}
+                        text: {"--color": "#000000"},
+                        icon: {"--bg": "#e4e4e4"}
                     }
                 }
             },
@@ -601,3 +623,13 @@ export const BENTO_ITEMS = [
     },
 ];
 
+export function widgetItems(){
+    // Page data :
+    const data = usePageData();   // Data door ...
+
+    const widget = data.widget;
+    const widgetType = widget.type;
+    const widgetItems = widget.items;   // Widget Items
+
+    return widgetItems
+}

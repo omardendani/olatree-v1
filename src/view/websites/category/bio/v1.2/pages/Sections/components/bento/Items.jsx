@@ -5,11 +5,17 @@ import { useDeviceType, normalizeDeviceType } from '../../hooks/useDeviceType.js
 
 import WhatsAppAction from '../../../../components/actions/Actions.jsx';
 import { getSiteInfo } from '../../../../utils/getSiteInfo.jsx';
-
+import { usePageData } from '../../../../../../../../../contexts/PageDataContext.jsx';
+import { ChatCircleDots } from '../../../../assets/icons/Icons.jsx';
 
 export function Items({ data }) {
 
+    const pageData = usePageData();
+
     const item_data = data.content;
+    
+    if (!item_data) return;
+
     const type = item_data.type;
     const style = item_data.style;
 
@@ -25,8 +31,7 @@ export function Items({ data }) {
     const defaultVar = template.var || null;
     const customVar = item_data.var || null;
 
-    console.log(templateType)
-
+    
     const deviceType = normalizeDeviceType(useDeviceType()); // 'MOBILE' ou 'DESKTOP'
 
 
@@ -84,50 +89,78 @@ export function Items({ data }) {
         const content = item_data.content;
 
         if( true ){
-        return (
-            <div
-                className={`bento-item-cnt`}
-                style={{
-                    ...container,
-                    ...customVar.container || defaultVar.container
-                }}
-            >
-                <p
-                    contentEditable={false}
-                    spellCheck={false}
+            return (
+                <div
+                    className={`bento-item-cnt`}
                     style={{
-                        ...templateStyle.value,
-                        ...customVar.value || defaultVar.value
+                        ...container,
+                        ...customVar.container || defaultVar.container
                     }}
                 >
-                    {content.value}
-                </p>
+                    <p
+                        contentEditable={false}
+                        spellCheck={false}
+                        style={{
+                            ...templateStyle.value,
+                            ...customVar.value || defaultVar.value
+                        }}
+                    >
+                        {content.value}
+                    </p>
 
-                <div
-                    style={null}
-                >
-                        
-                    <WhatsAppAction
-                        phone={'212767574663'}
-                        message={`
-                            Hello, Can i Get a quote?
-                        `}
-                        button= {
-                            <p
-                                style={{
-                                    ...templateStyle.btn.content.text,
-                                    ...customVar.btn.content.text || defaultVar.btn.content.text
-                                }}
-                            >
-                                {content.btn.value.text}
-                            </p>
+                    <div
+                        style={{ direction: "rtl" }}
+                    >
+                        { content.btn.action.type === "whatsapp" ? 
+                            <WhatsAppAction
+                                phone={`${pageData.contact.whatsapp}`}
+                                message={`${content.btn.action.message}`}
+                                button= {
+                                    content.btn.style === "text" ?
+                                    <p
+                                        style={{
+                                            ...templateStyle.btn.content.text,
+                                            ...customVar.btn.content.text || defaultVar.btn.content.text
+                                        }}
+                                    >
+                                        {content.btn.value.text}
+                                    </p>
+                                    :
+                                    content.btn.style === "icon" ?
+                                    <span
+                                        style={{
+                                            ...templateStyle.btn.content.icon,
+                                            ...customVar.btn.content.icon || defaultVar.btn.content.icon
+                                        }}
+                                    >
+                                        <ChatCircleDots 
+                                            color= '#000000'
+                                        />
+                                    </span>
+                                    :
+                                    null
+                                }
+                            /> 
+                            : 
+                            content.btn.action.type === "url" ?
+                            <Link to={content.btn.action.url}>
+                                <p
+                                    style={{
+                                        ...templateStyle.btn.content.text,
+                                        ...customVar.btn.content.text || defaultVar.btn.content.text
+                                    }}
+                                >
+                                    {content.btn.value.text}
+                                </p>
+                            </Link>
+                            :
+                            null
                         }
-                    />
+
+                    </div>
 
                 </div>
-
-            </div>
-        );
+            );
         }
     }
 
@@ -259,7 +292,7 @@ export function Items({ data }) {
                                 ...customVar.title || defaultVar.title
                             }}
                         >
-                            {title}
+                            {customTitle? customTitle : title}
                         </p>
 
                     </div>

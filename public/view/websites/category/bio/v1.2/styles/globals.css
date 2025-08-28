@@ -31,6 +31,8 @@ a {
   color: hwb(0 0% 100% / 1);
   /* Couleur primaire */
   text-decoration: none;
+  display: block;
+  width: max-content;
 }
 
 /*a:hover {
