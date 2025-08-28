@@ -1,1 +1,0 @@
-import{j as e,L as n}from"./index-CSHwSIrG.js";function s(){return e.jsxs("div",{children:[e.jsx("p",{children:"Baserage"}),e.jsx(n,{to:"/dental",children:"dental"}),e.jsx(n,{to:"/login",children:"Login"}),e.jsx(n,{to:"/user",children:"User"})]})}export{s as default};
