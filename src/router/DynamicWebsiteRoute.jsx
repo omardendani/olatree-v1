@@ -12,14 +12,14 @@ const modules = import.meta.glob('../view/websites/category/**/*.jsx');
 // Cache pour éviter de recréer les composants lazy
 const componentCache = new Map();
 
-const loadComponent = (templateName, pageName) => {
+const loadComponent = (templateName, indexPath, version) => {
   // Cherche la clé correspondant au fichier voulu
   const matchedPath = Object.keys(modules).find(key =>
-    key.endsWith(`${templateName}/${pageName}.jsx`)
+    key.endsWith(`${templateName}//${version}/${indexPath}.jsx`)
   );
 
   if (!matchedPath) {
-    console.error(`Component not found: ${templateName}/${pageName}.jsx`);
+    console.error(`Component not found: ${templateName}/${indexPath}.jsx`);
     console.log('Available modules:', Object.keys(modules));
     return null;
   }
@@ -125,7 +125,8 @@ export default function DynamicWebsiteRoute() {
 
     const Comp = loadComponent(
       info.pageCategory,
-      info.indexPath
+      info.indexPath,
+      info.version,
     );
 
     setComponent(() => Comp);
