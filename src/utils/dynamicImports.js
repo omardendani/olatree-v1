@@ -1,47 +1,58 @@
-// utils/dynamicImports.js
-import { lazy } from 'react';
+// src/utils/dynamicImports.js
+import { lazy } from "react";
 
-// Vite analyse ceci statiquement et inclut tous les fichiers matchants au build
-const modules = import.meta.glob('../view/Baserage/**/*.jsx');
+// --- Glob dynamique pour tous les fichiers .jsx sous view/Baserage ---
+const modules = import.meta.glob("../view/Baserage/**/*.jsx");
 
-// Cache pour éviter de recréer les composants lazy
+// --- Cache pour éviter de recréer les composants lazy ---
 const componentCache = new Map();
 
+/**
+ * Charge dynamiquement un composant par templateName et pageName
+ * @param {string} templateName - Nom du template (dossier)
+ * @param {string} pageName - Nom du composant/page (fichier sans extension)
+ * @returns {React.LazyExoticComponent} - Composant React lazy
+ */
 export const loadComponent = (templateName, pageName) => {
-  const path = `../view/Baserage/${templateName}/${pageName}.jsx`;
-  
-  // Vérifier si le module existe
-  if (!modules[path]) {
-    console.error(`Component not found: ${path}`);
-    console.log('Available modules:', Object.keys(modules));
+  // Cherche le chemin exact correspondant dans le glob
+  const normalizedPath = Object.keys(modules).find((key) =>
+    key.endsWith(`${templateName}/${pageName}.jsx`)
+  );
+
+  if (!normalizedPath) {
+    console.error(`Component not found: ${templateName}/${pageName}`);
+    console.log("Available modules:", Object.keys(modules));
     return null;
   }
 
-  // Utiliser le cache si le composant existe déjà
-  if (componentCache.has(path)) {
-    return componentCache.get(path);
+  // Vérifie le cache
+  if (componentCache.has(normalizedPath)) {
+    return componentCache.get(normalizedPath);
   }
 
-  // Créer le composant lazy
-  const LazyComponent = lazy(() => modules[path]());
-  
-  // Mettre en cache
-  componentCache.set(path, LazyComponent);
-  
+  // Crée le composant lazy
+  const LazyComponent = lazy(() => modules[normalizedPath]());
+
+  // Met en cache
+  componentCache.set(normalizedPath, LazyComponent);
+
   return LazyComponent;
 };
 
-// Version alternative avec import.meta.glob eager (charge tout de suite)
-const eagerModules = import.meta.glob('../view/Baserage/**/*.jsx', { eager: true });
+/**
+ * Version synchrone qui charge tout de suite (eager) pour certains cas
+ */
+const eagerModules = import.meta.glob("../view/Baserage/**/*.jsx", { eager: true });
 
 export const loadComponentSync = (templateName, pageName) => {
-  const path = `../view/Baserage/${templateName}/${pageName}.jsx`;
-  const module = eagerModules[path];
-  
-  if (!module) {
-    console.error(`Component not found: ${path}`);
+  const normalizedPath = Object.keys(eagerModules).find((key) =>
+    key.endsWith(`${templateName}/${pageName}.jsx`)
+  );
+
+  if (!normalizedPath) {
+    console.error(`Component not found (sync): ${templateName}/${pageName}`);
     return null;
   }
-  
-  return module.default;
+
+  return eagerModules[normalizedPath].default;
 };
