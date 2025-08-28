@@ -177,6 +177,7 @@ export default function DynamicWebsiteRoute() {
   if (!pageInfo) return "error";
 
   const data = pageInfo.data;
+  console.log(data)
 
   return (
     <WebsiteLoader
