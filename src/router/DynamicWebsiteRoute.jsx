@@ -19,7 +19,7 @@ const loadComponent = (templateName, indexPath, version) => {
   );
 
   if (!matchedPath) {
-    console.error(`Component not found: ${templateName}/${version}/${indexPath}.jsx`);
+    console.error(`ERR. Component not found: ${templateName}/${version}/${indexPath}.jsx`);
     console.log('Available modules:', Object.keys(modules));
     return null;
   }
