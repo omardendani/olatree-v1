@@ -83,7 +83,7 @@ export default function DynamicWebsiteRoute() {
     document.body.style.setProperty("--font-family", `"${fontFamily}", sans-serif`);
   }, [pageInfo]);
 
-  if (!pageInfo) return <Navigate to="/" />; // page non trouvée
+  if (!pageInfo) return <Navigate to="/login" />; // page non trouvée
 
   const data = pageInfo.data;
 

@@ -53,6 +53,10 @@ export const generalRoutes = [
         path: "signup",
         element: Signup ? <Signup /> : <div>Signup component not found</div>,
       },
+      {
+        path: "contact",
+        element: Signup ? <Signup /> : <div>Signup component not found</div>,
+      },
     ],
   },
 ];
