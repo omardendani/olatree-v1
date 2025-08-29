@@ -376,10 +376,10 @@ export const WIDGET_TEMPLATE = {
                         text: {
                             color: 'var(--color)',
                             fontFamily: 'var(--font-family)',
-                            lineHeight: design_system.typography.headline.h5.lineHeight,
-                            fontSize: design_system.typography.headline.h5.size,
-                            fontWeight: design_system.typography.headline.h5.weight,
-                            letterSpacing: design_system.typography.headline.h5.letterSpacing,
+                            lineHeight: "var(--lineHeight)",
+                            fontSize: "var(--fontSize)",
+                            fontWeight: "var(--fontWeight)",
+                            letterSpacing: "var(--letterSpacing)",
                             cursor: 'pointer',
                         },
                         icon: {
@@ -390,6 +390,21 @@ export const WIDGET_TEMPLATE = {
                             width: "55px",
                             padding: "20%",
                             borderRadius: "8px",
+                            cursor: 'pointer',
+                        },
+                        txt_icon: {
+                            background: "var(--bg)",
+                            boxShadow: '#dcdcdc 0px 0px 0px 0px',
+                            display: "block",
+                            height: "45px",
+                            minWidth: "45px",
+                            padding: "7px 12px",
+                            borderRadius: "8px",
+                            gap: "7px",
+                            display: "flex",
+                            flexDirection: "row-reverse",
+                            alignItems: "center",
+                            justifyContent: "space-between",
                             cursor: 'pointer',
                         }
                     }
@@ -409,8 +424,15 @@ export const WIDGET_TEMPLATE = {
                 },
                 btn: {
                     content: {
-                        text: {"--color": "#000000"},
-                        icon: {"--bg": "#e4e4e4"}
+                        text: { 
+                        "--color": "#ffffff",
+                        "--lineHeight": "1.2",
+                        "--fontSize": "16px",
+                        "--fontWeight": "400",
+                        "--letterSpacing": "-0.5px"
+                        },
+                        icon: { "--bg": "#004af5"},
+                        txt_icon: { "--bg": "#004af5"}
                     }
                 }
             },

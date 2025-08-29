@@ -6,7 +6,7 @@ import { useDeviceType, normalizeDeviceType } from '../../hooks/useDeviceType.js
 import WhatsAppAction from '../../../../components/actions/Actions.jsx';
 import { getSiteInfo } from '../../../../utils/getSiteInfo.jsx';
 import { usePageData } from '../../../../../../../../../contexts/PageDataContext.jsx';
-import { ChatCircleDots } from '../../../../assets/icons/Icons.jsx';
+import { Chat, ArrowDiagonal } from '../../../../assets/icons/Icons.jsx';
 
 export function Items({ data }) {
 
@@ -133,10 +133,39 @@ export function Items({ data }) {
                                             ...customVar.btn.content.icon || defaultVar.btn.content.icon
                                         }}
                                     >
-                                        <ChatCircleDots 
-                                            color= '#000000'
+                                        <Chat 
+                                            color= '#ffffffff'
+                                             strokeWidth='18'
                                         />
                                     </span>
+                                    :
+                                    content.btn.style === "txt_icon" ?
+                                    <div
+                                        style={{
+                                            ...templateStyle.btn.content.txt_icon,
+                                            ...customVar.btn.content.txt_icon || defaultVar.btn.content.txt_icon
+                                        }}
+                                    >
+                                        <span
+                                            style={{
+                                                height: "100%",
+                                                aspectRatio: "1"
+                                            }}
+                                        >
+                                            <Chat 
+                                                color= '#ffffffff'
+                                                strokeWidth='18'
+                                            />
+                                        </span>
+                                        <p
+                                            style={{
+                                                ...templateStyle.btn.content.text,
+                                                ...customVar.btn.content.text || defaultVar.btn.content.text
+                                            }}
+                                        >
+                                            {content.btn.value.text}
+                                        </p>
+                                    </div>
                                     :
                                     null
                                 }
@@ -271,19 +300,40 @@ export function Items({ data }) {
                         }}
                     >
 
-                        <span
+                        <div
                             style={{
-                                ...templateStyle.span
+                                width: "100%",
+                                display: "flex",
+                                flexDirection: "row",
+                                justifyContent: "space-between",
                             }}
                         >
-                            <img 
-                                src={favicon}
+                            <span
                                 style={{
-                                    objectFit: "cover",
-                                    width: "100%",
+                                    ...templateStyle.span
                                 }}
-                            />
-                        </span>
+                            >
+                                <img 
+                                    src={favicon}
+                                    style={{
+                                        objectFit: "cover",
+                                        width: "100%",
+                                    }}
+                                />
+                            </span>
+                            <span
+                                style={{
+                                    height: "35px",
+                                    width: "35px",
+                                    padding: "3%",
+                                    backgroundColor: "#0000000a",
+                                    borderRadius: "50%",
+                                    border: "solid 2px #0000000a",
+                                }}
+                            >
+                                <ArrowDiagonal color='#00000095' strokeWidth='18' />
+                            </span>
+                        </div>
 
                         <p
                             className={`bento-item-title-in-box`}
