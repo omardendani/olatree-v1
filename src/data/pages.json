@@ -16,7 +16,9 @@
       },
       "systemDesign": {
         "layout": {
-          "desktop": {}
+          "widgets": {
+            "gap": 16
+          }
         },
         "typography": {
           "family": "Inter"
@@ -305,14 +307,16 @@
       "pic": "./users/pic/centredentairedendani.jpg",
       "bio": {
         "b1": "Centre Dentaire Dendani",
-        "b2": "🦷 Médecin dentiste."
+        "b2": "Dr. Khawla Dendani ✨\n\n 🦷 Médecin dentiste.\n ☎️ 05 22-748-380\n 📞 +212 716-573-890\n 📍 Imm 07, App 14, 1er Étage, GH11, Madinati, Casablanca 20600 "
       },
       "contact": {
         "whatsapp": "212767574663"
       },
       "systemDesign": {
         "layout": {
-          "desktop": {}
+          "widgets": {
+            "gap": 16
+          }
         },
         "typography": {
           "family": "Poppins"
@@ -448,7 +452,7 @@
             "position": {
               "mobile": {
                 "x": 2,
-                "y": 9
+                "y": 10
               },
               "desktop": {
                 "x": 4,
@@ -494,7 +498,7 @@
             "position": {
               "mobile": {
                 "x": 2,
-                "y": 13
+                "y": 14
               },
               "desktop": {
                 "x": 4,
@@ -526,8 +530,8 @@
                       "--fontWeight": "400",
                       "--letterSpacing": "-0.5px"
                     },
-                    "icon": { "--bg": "#004af5"},
-                    "txt_icon": { "--bg": "#004af5"}
+                    "icon": { "--bg": "#101010"},
+                    "txt_icon": { "--bg": "#101010"}
                   }
                 }
               },
@@ -548,7 +552,7 @@
             },
             "style": {
               "mobile": {
-                "h": 2,
+                "h": 3,
                 "w": 4
               },
               "desktop": {
@@ -605,7 +609,7 @@
             "position": {
               "mobile": {
                 "x": 2,
-                "y": 11
+                "y": 12
               },
               "desktop": {
                 "x": 4,

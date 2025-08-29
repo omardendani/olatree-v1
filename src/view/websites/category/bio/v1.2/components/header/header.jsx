@@ -1,5 +1,5 @@
 import { design_system } from "../../pages/Sections/config/bentoConfig.jsx";
-
+import Paragraph from "../assests/paragraph.jsx";
 
 export function Header({ content, editMode, style }) {
     const {pic, picStyle, b1, b2} = content;
@@ -16,8 +16,6 @@ export function Header({ content, editMode, style }) {
             className="header-body" 
             style={ 
                 style
-                //gridArea: 'layout-left', 
-                //width: width ? `calc(${width}px + var(--sections-gap))` : 'none' 
             }>
             
             <div 
@@ -44,8 +42,9 @@ export function Header({ content, editMode, style }) {
                     contentEditable={false}
                     spellCheck={false}
                     >
-                    {/*<Paragraph content={h1} />*/}
-                    {b1}
+
+                    {<Paragraph content={b1} />}
+                    
                 </p>
 
             </div>
@@ -61,8 +60,8 @@ export function Header({ content, editMode, style }) {
                     contentEditable={edit_Mode}
                     spellCheck={false}
                 >
-                    {/*<Paragraph content={h2}/>*/}
-                    {b2}
+                    {<Paragraph content={b2}/>}
+                    
                 </p>
             </div>
         </div>

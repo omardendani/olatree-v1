@@ -3,8 +3,6 @@
 
 import { usePageData } from "../../../../../../../../contexts/PageDataContext";
 
-    
-
 export const GENERAL_CONFIG = {
     BENTO_GRID_GAP: 16
 };
@@ -399,8 +397,8 @@ export const WIDGET_TEMPLATE = {
                             height: "45px",
                             minWidth: "45px",
                             padding: "7px 12px",
-                            borderRadius: "8px",
-                            gap: "7px",
+                            borderRadius: "45px",
+                            gap: "6px",
                             display: "flex",
                             flexDirection: "row-reverse",
                             alignItems: "center",
@@ -431,8 +429,8 @@ export const WIDGET_TEMPLATE = {
                         "--fontWeight": "400",
                         "--letterSpacing": "-0.5px"
                         },
-                        icon: { "--bg": "#004af5"},
-                        txt_icon: { "--bg": "#004af5"}
+                        icon: { "--bg": "#101010"},
+                        txt_icon: { "--bg": "#101010"}
                     }
                 }
             },

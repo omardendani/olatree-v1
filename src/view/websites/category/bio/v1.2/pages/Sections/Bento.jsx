@@ -7,7 +7,7 @@ import { useDeviceType, normalizeDeviceType } from './hooks/useDeviceType.jsx'; 
 
 
 // Config :
-import { GENERAL_CONFIG, GRID_CONFIG, widgetItems } from './config/bentoConfig.jsx';
+import { GRID_CONFIG, widgetItems } from './config/bentoConfig.jsx';
 
 // Hooks :
 import { useDivWidth } from './hooks/useDivWidth.jsx';
@@ -17,6 +17,7 @@ import { useDragLogic } from './hooks/useDragLogic.jsx';
 
 // Components :
 import DraggableItem from './components/DraggableItem.jsx';
+import { usePageData } from '../../../../../../../contexts/PageDataContext.jsx';
 
 // Registrer le plugin Draggable
 gsap.registerPlugin(Draggable);
@@ -47,7 +48,7 @@ export function Edit_Mode_Bento() {
     const [containerHeight, setContainerHeight] = useState(0);
     const prevWidthRef = useRef(width);
 
-    const bento_gap = GENERAL_CONFIG.BENTO_GRID_GAP;
+    const bento_gap = pageData.systemDesign.layout.widgets.gap;
     const bento_columns = getGridConfigValue(deviceType, "MAX_COLUMNS");
     const gridCalc = useGridCalculations(width, bento_gap, bento_columns);
     const collisionSystem = useCollisionSystem(gridCalc);
@@ -188,6 +189,7 @@ export function Edit_Mode_Bento() {
 
 export function Viewer_Mode_Bento() {
 
+    const pageData = usePageData();
     const sourceWidgets = widgetItems();
 
     const deviceType = normalizeDeviceType(useDeviceType()); // 'MOBILE' ou 'DESKTOP'
@@ -206,8 +208,8 @@ export function Viewer_Mode_Bento() {
         }
         return config[key];
     };
-
-    const bento_gap = GENERAL_CONFIG.BENTO_GRID_GAP;
+    
+    const bento_gap = pageData.systemDesign.layout.widgets.gap;
     const bento_columns = getGridConfigValue(deviceType, "MAX_COLUMNS");
     const gridCalc = useGridCalculations(width, bento_gap, bento_columns);
 

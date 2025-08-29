@@ -2,7 +2,8 @@ import { useRef, } from "react";
 import { Header } from "../components/header/header.jsx";
 import { Edit_Mode_Bento, Viewer_Mode_Bento } from './Sections/Bento.jsx';
 import { usePageData } from "../../../../../../contexts/PageDataContext.jsx";
-import { useLayoutMargins } from "../utils/useLayoutMargins.jsx";
+import useLayoutMargin from "../utils/useLayoutMargin.jsx";
+
 
 export default function Home({ authData}) {
   const edit_Mode = authData?.isAuthenticated ?? false;  // simple assign  
@@ -13,7 +14,9 @@ export default function Home({ authData}) {
     const data = usePageData();   // Data door ...
 
     // Page Layout :
-      const { varLayoutTopMargin, varLayoutBordMargin } = useLayoutMargins();
+    console.log()
+      const { getMargins } = useLayoutMargin();
+      const [vertical, horizontal] = getMargins();
 
     // Page Data :
       const profile_pic = data.pic;
@@ -25,8 +28,8 @@ export default function Home({ authData}) {
     <div 
       className="home-container"
       style={{
-        '--layout-bord-margin': varLayoutBordMargin,
-        '--layout-top-margin': varLayoutTopMargin,
+        '--layout-bord-margin': horizontal,
+        '--layout-top-margin': vertical,
         paddingLeft: 'var(--layout-bord-margin)',
         paddingRight: 'var(--layout-bord-margin)',
         paddingTop: 'var(--layout-top-margin)',
@@ -45,8 +48,8 @@ export default function Home({ authData}) {
           }}
           style={{
             //cellWidth,
-            '--layout-bord-margin': varLayoutBordMargin,
-            '--layout-top-margin': varLayoutTopMargin,
+            '--layout-bord-margin': horizontal,
+            '--layout-top-margin': vertical,
           }}
         />
 
