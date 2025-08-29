@@ -35,9 +35,9 @@ export function Header({ content, editMode, style }) {
                     className="header-h1"
                     style={{
                         fontSize: getTypeSystem('headline', 'h4', 'size'),
-                        fontWeight: getTypeSystem('headline', 'h4', 'weight'),
-                        lineHeight: getTypeSystem('headline', 'h4', 'line_height'),
-                        letterSpacing: getTypeSystem('headline', 'h4', 'letter_spacing')
+                        fontWeight: "400",
+                        lineHeight: "1.2",
+                        letterSpacing: "-0.9"
                     }}
                     contentEditable={false}
                     spellCheck={false}
@@ -52,10 +52,10 @@ export function Header({ content, editMode, style }) {
                 <p 
                     className="header-h2"
                     style={{
-                        fontSize: getTypeSystem('headline', 'h5', 'size'),
-                        fontWeight: getTypeSystem('headline', 'h5', 'weight'),
-                        lineHeight: getTypeSystem('headline', 'h5', 'line_height'),
-                        letterSpacing: getTypeSystem('headline', 'h5', 'letter_spacing')
+                        fontSize: "18",
+                        fontWeight: "300",
+                        lineHeight: "1.5",
+                        letterSpacing: "0"
                     }}
                     contentEditable={edit_Mode}
                     spellCheck={false}

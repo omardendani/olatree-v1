@@ -79,7 +79,7 @@ export const design_system = {
                 size: '14px',
                 weight: '400',
                 lineHeight: '1.2',
-                letterSpacing: '-1px'
+                letterSpacing: '-0.5px'
             }
         },
         button: {

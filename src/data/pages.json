@@ -307,7 +307,7 @@
       "pic": "./users/pic/centredentairedendani.jpg",
       "bio": {
         "b1": "Centre Dentaire Dendani",
-        "b2": "Dr. Khawla Dendani ✨\n\n 🦷 Médecin dentiste.\n ☎️ 05 22-748-380\n 📞 +212 716-573-890\n 📍 Imm 07, App 14, 1er Étage, GH11, Madinati, Casablanca 20600 "
+        "b2": "Dr. Khawla Dendani\n\n 🦷 Médecin dentiste.\n ☎️ 05 22-748-380\n 📞 +212 716-573-890\n 📍 A Casablanca"
       },
       "contact": {
         "whatsapp": "212767574663"
@@ -323,7 +323,7 @@
         },
         "pic": {
           "style": {
-            "borderRadius": "50%"
+            "borderRadius": "20%"
           }
         }
       },
@@ -336,14 +336,14 @@
               "type": "stat",
               "var": {
                 "container": {
-                  "--bg": "#000000"
+                  "--bg": "#d1e9ff"
                 },
                 "title": {
-                  "--color": "#ffffffff",
+                  "--color": "#000000",
                   "--opacity": "1"
                 },
                 "value": {
-                  "--color": "#ffffffff",
+                  "--color": "#000000",
                   "--opacity": "1"
                 }
               },
