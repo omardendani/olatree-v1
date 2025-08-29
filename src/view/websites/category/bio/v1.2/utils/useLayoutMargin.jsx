@@ -1,9 +1,9 @@
-import { usePageData } from "../contexts/PageDataContext.jsx";
+import { useEffect, useState } from "react";
+import { usePageData } from "../../../../../../contexts/PageDataContext.jsx";
 
-
-export default function useLayoutMargin() {
+export default function useLayoutMargins() {
   const { systemDesign } = usePageData();
-  const widgetGap = `${systemDesign.layout.widgets.gap}px`;
+  const widgetGap = `${systemDesign?.layout?.widgets?.gap || 16}px`;
 
   // Configuration des marges par breakpoint
   const layoutMarginSystem = {
@@ -24,5 +24,15 @@ export default function useLayoutMargin() {
     return layoutMarginSystem.desktop;
   }
 
-  return { getMargins };
+  const [margins, setMargins] = useState(
+    getMargins(typeof window !== "undefined" ? window.innerWidth : 0)
+  );
+
+  useEffect(() => {
+    const onResize = () => setMargins(getMargins(window.innerWidth));
+    window.addEventListener("resize", onResize, { passive: true });
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  return margins;
 }

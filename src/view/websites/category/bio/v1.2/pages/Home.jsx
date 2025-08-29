@@ -14,9 +14,8 @@ export default function Home({ authData}) {
     const data = usePageData();   // Data door ...
 
     // Page Layout :
-    console.log()
-      const { getMargins } = useLayoutMargin();
-      const [vertical, horizontal] = getMargins();
+      const margins = useLayoutMargin(); // 👈 récupère l'objet des marges
+      const [vertical, horizontal] = margins;
 
     // Page Data :
       const profile_pic = data.pic;
